@@ -1,4 +1,5 @@
 using FourInRow.Authentication.Utillities;
+using FourInRow.Hubs;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -6,8 +7,39 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using RealtimeCompiler.Interfaces;
 
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
+
 namespace FourInRow
 {
+    /*public class Startup
+    {
+        // This method gets called by the runtime. Use this method to add services to the container.
+        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddSignalR();
+        }
+
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+
+            app.UseFileServer();
+
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<ChatHub>("/chat");
+            });
+        }
+    }*/
+
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -20,6 +52,7 @@ namespace FourInRow
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
             #region General config
 
             services.AddControllers();
@@ -42,7 +75,13 @@ namespace FourInRow
             // JWT Auth - configure DI for application services (lettura condigurazioni)
             services.AddScoped<IUserService, UserService>();
 
-            #endregion            
+            #endregion
+
+            #region SignaR
+
+            services.AddSignalR();
+
+            #endregion
 
         }
 
@@ -76,7 +115,22 @@ namespace FourInRow
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
-            });            
+
+                endpoints.MapHub<ChatHub>("/chat");
+            });
+
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+
+            app.UseFileServer();
+
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<ChatHub>("/chat");
+            });
+
         }
     }
 }
