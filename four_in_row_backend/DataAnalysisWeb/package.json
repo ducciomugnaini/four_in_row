@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "chart.js": "^2.9.4",
-    "jquery": "^3.5.1",
-    "jsgrid": "^1.5.3"
-  }
-}
