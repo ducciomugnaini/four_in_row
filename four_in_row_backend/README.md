@@ -42,3 +42,6 @@ Baraccone tirato su per non passare esplicitamente il logger alla libreria ester
 Al momento sembra che signalR sia funzionante con project mentre con iss behind sorgono problemi di connessione da parte dell app android. 
 Problema da idagare prima di andare in produzione.
 [Debug settings #iis #project](https://stackoverflow.com/questions/51801184/asp-net-core-launch-settings-iis-express-iis-project-executable)
+
+Settaggio delle cartelle della web app
+[app.UseStaticFiles() vs app.UseFileServer()](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/static-files?view=aspnetcore-5.0)
