@@ -7,11 +7,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using RealtimeCompiler.Interfaces;
 
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.DependencyInjection;
-using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
-
 namespace FourInRow
 {
     public class Startup
