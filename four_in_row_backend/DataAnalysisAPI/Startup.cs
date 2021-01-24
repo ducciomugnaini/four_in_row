@@ -75,36 +75,21 @@ namespace FourInRow
             #endregion
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
-
+            app.UseFileServer();
             app.UseRouting();
-
             app.UseAuthorization();
             app.UseCors(options => options.AllowAnyOrigin());
 
-            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
-
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllers();
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
 
                 endpoints.MapHub<ChatHub>("/chat");
             });
-
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-
-            app.UseFileServer();
-
-            app.UseSignalR(routes =>
-            {
-                routes.MapHub<ChatHub>("/chat");
-            });
-
         }
     }
 }
