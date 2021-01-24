@@ -1,17 +1,4 @@
-# DataAnalysis
-
-# Javascript Side
-
-`npm install`
-
-`npm install jquery`
-`npm install chart.js`
-`npm install jsgrid`
-
-[Vue tutorial](https://www.tutorialspoint.com/vuejs/vuejs_routing.htm)
-[Vue SPA tutorial](https://www.adcisolutions.com/knowledge/how-build-single-page-application-spa-vuejs?utm_source=adci-website&utm_campaign=improve-your-vuejs&utm_content=improve-your-vuejs-link-spa-vuejs) 
-[Vue SPA Github](https://github.com/DChuchin/vue-spa-tutorial/tree/step-5)
-
+# Four in row
 # C# Side
 
 [Net Core 3](https://docs.microsoft.com/it-it/dotnet/core/whats-new/dotnet-core-3-0)  
@@ -41,6 +28,10 @@ L'ultimo link è quello fondamentale per impostare il log per le dll esterne.
 Baraccone tirato su per non passare esplicitamente il logger alla libreria esterna ma attraverso la DI.
 
 [JWT Auth](https://jasonwatmore.com/post/2019/10/11/aspnet-core-3-jwt-authentication-tutorial-with-example-api#app-settings-cs)
+
+[SingnalR overview](https://docs.microsoft.com/en-us/aspnet/core/tutorials/signalr?view=aspnetcore-5.0&tabs=visual-studio)
+[SingnalR samples](https://github.com/aspnet/SignalR-samples)
+[SingnalR java client](https://github.com/aspnet/SignalR-samples)
 
 # Utilities
 
