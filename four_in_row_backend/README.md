@@ -36,3 +36,9 @@ Baraccone tirato su per non passare esplicitamente il logger alla libreria ester
 # Utilities
 
 [Code Maid](https://marketplace.visualstudio.com/items?itemName=SteveCadwallader.CodeMaid)
+
+# Hints
+
+Al momento sembra che signalR sia funzionante con project mentre con iss behind sorgono problemi di connessione da parte dell app android. 
+Problema da idagare prima di andare in produzione.
+[Debug settings #iis #project](https://stackoverflow.com/questions/51801184/asp-net-core-launch-settings-iis-express-iis-project-executable)
