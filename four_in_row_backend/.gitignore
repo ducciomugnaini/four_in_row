@@ -26,6 +26,7 @@ packages/
 *.rdlc
 *.rdl
 .idea/
+.vscode/
 node_modules
 
 # ReSharper #
