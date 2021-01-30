@@ -20,9 +20,15 @@
             android:text="Go to Chat Activity" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btn_callRest"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Call REST API" />
+
+        <TextView
+            android:id="@+id/txt_result"
+            android:layout_width="match_parent"
+            android:layout_height="596dp"
+            android:text="TextView" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
