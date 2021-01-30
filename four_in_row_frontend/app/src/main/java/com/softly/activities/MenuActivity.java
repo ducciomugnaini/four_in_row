@@ -15,6 +15,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.softly.R;
 import com.softly.utilities.VolleyRequestQueue;
+import com.softly.utilities.network.NetworkUtility;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -36,7 +37,9 @@ public class MenuActivity extends AppCompatActivity {
         restButton.setOnClickListener(v -> {
             final TextView textView = findViewById(R.id.txt_result);
 
-            String url = "https://jsonplaceholder.typicode.com/posts";
+            NetworkUtility.RequireToken(MenuActivity.this);
+
+            /*String url = "https://jsonplaceholder.typicode.com/posts";
             Log.d("HEI", "bau");
             JsonArrayRequest jsonObjectRequest = new JsonArrayRequest(Request.Method.GET, url,
                     null,
@@ -47,8 +50,8 @@ public class MenuActivity extends AppCompatActivity {
                         Log.e("ERROR", "onErrorResponse fired");
                     }
             );
-
             VolleyRequestQueue.getInstance(MenuActivity.this).addToRequestQueue(jsonObjectRequest);
+            */
         });
     }
 }
