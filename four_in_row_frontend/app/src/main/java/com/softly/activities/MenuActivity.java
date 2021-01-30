@@ -14,6 +14,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.softly.R;
+import com.softly.utilities.VolleyRequestQueue;
 
 import java.net.URL;
 
@@ -38,7 +39,8 @@ public class MenuActivity extends AppCompatActivity {
             final TextView textView = (TextView) findViewById(R.id.txt_result);
 
             // Instantiate the RequestQueue.
-            RequestQueue queue = Volley.newRequestQueue(MenuActivity.this);
+            //RequestQueue queue = Volley.newRequestQueue(MenuActivity.this);
+            RequestQueue queue = VolleyRequestQueue.getInstance(MenuActivity.this).getRequestQueue();
             String url = "https://jsonplaceholder.typicode.com/posts";
 
             // Request a string response from the provided URL.
@@ -57,7 +59,8 @@ public class MenuActivity extends AppCompatActivity {
             });
 
             // Add the request to the RequestQueue.
-            queue.add(stringRequest);
+            //queue.add(stringRequest);
+            VolleyRequestQueue.getInstance(MenuActivity.this).addToRequestQueue(stringRequest);
         });
     }
 
