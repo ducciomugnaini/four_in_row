@@ -8,7 +8,11 @@
 
 [Json to Java Object (response)](https://stackoverflow.com/questions/35210070/converting-jsonobject-to-java-object)
 
-[Schema di retry](https://stackoverflow.com/questions/53958598/get-access-token-from-refresh-token-in-volley)
+[Schema di retry](https://stackoverflow.com/questions/53958598/get-access-token-from-refresh-token-in-volley)  
+Schema di autenticazione JWT con retry in volley per Android.
+
+[TextUtils](https://developer.android.com/reference/android/text/TextUtils.html)  
+Utilitiy per manipolare le stringhe in Android.
 
 
 ## Utilities

@@ -1,4 +1,4 @@
-package com.softly.utilities;
+package com.softly.utilities.network;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -11,28 +11,11 @@ import com.android.volley.toolbox.Volley;
 public class VolleyRequestQueue {
     private static VolleyRequestQueue instance;
     private com.android.volley.RequestQueue requestQueue;
-    private ImageLoader imageLoader;
     private static Context ctx;
 
     private VolleyRequestQueue(Context context) {
         ctx = context;
         requestQueue = getRequestQueue();
-
-        imageLoader = new ImageLoader(requestQueue,
-                new ImageLoader.ImageCache() {
-                    private final LruCache<String, Bitmap>
-                            cache = new LruCache<String, Bitmap>(20);
-
-                    @Override
-                    public Bitmap getBitmap(String url) {
-                        return cache.get(url);
-                    }
-
-                    @Override
-                    public void putBitmap(String url, Bitmap bitmap) {
-                        cache.put(url, bitmap);
-                    }
-                });
     }
 
     public static synchronized VolleyRequestQueue getInstance(Context context) {
@@ -51,12 +34,9 @@ public class VolleyRequestQueue {
         return requestQueue;
     }
 
-    public <T> void addToRequestQueue(Request<T> req) {
+    public <T> void addToRequestQueue(Request<T> req)
+    {
         getRequestQueue().add(req);
-    }
-
-    public ImageLoader getImageLoader() {
-        return imageLoader;
     }
 }
 

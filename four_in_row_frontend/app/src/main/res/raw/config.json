@@ -1,0 +1,4 @@
+{
+  "AuthorizeUrl" : "http://10.0.2.2:57507/users/authenticate",
+  "MoveRequestUrl" : "http://10.0.2.2:57507/api/move"
+}

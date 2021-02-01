@@ -2,7 +2,6 @@ package com.softly.structures;
 
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
-
 import org.json.JSONObject;
 
 public class Move {
@@ -22,6 +21,4 @@ public class Move {
         Gson gson = new Gson();
         return gson.fromJson(jsonMove.toString(), Move.class);
     }
-
-
 }
