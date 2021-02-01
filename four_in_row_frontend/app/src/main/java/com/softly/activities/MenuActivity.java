@@ -14,6 +14,7 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.softly.R;
+import com.softly.structures.Grid;
 import com.softly.utilities.VolleyRequestQueue;
 import com.softly.utilities.network.NetworkUtility;
 
@@ -35,9 +36,10 @@ public class MenuActivity extends AppCompatActivity {
 
         Button restButton = findViewById(R.id.btn_callRest);
         restButton.setOnClickListener(v -> {
-            final TextView textView = findViewById(R.id.txt_result);
 
-            NetworkUtility.RequireToken(MenuActivity.this);
+            // this vs MenuActivity.this
+            // https://stackoverflow.com/questions/10102151/whats-the-difference-between-this-and-activity-this
+            NetworkUtility.GetMove(MenuActivity.this, new Grid("dummyField"));
 
             /*String url = "https://jsonplaceholder.typicode.com/posts";
             Log.d("HEI", "bau");
