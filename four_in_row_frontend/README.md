@@ -14,6 +14,7 @@ Schema di autenticazione JWT con retry in volley per Android.
 [TextUtils](https://developer.android.com/reference/android/text/TextUtils.html)  
 Utilitiy per manipolare le stringhe in Android.
 
+[SplashScreen](https://medium.com/swlh/splash-screen-in-android-8ab250e40190)
 
 ## Utilities
 
