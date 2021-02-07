@@ -9,7 +9,7 @@ namespace FourInRowAI.AI
         public int Score { get; set; }
     }
 
-    class FirAI : IArtificialIntelligence
+    public class FirAI : IArtificialIntelligence
     {
         public Player Human { get; set; } // => Minimize player
         public Player AI { get; set; } // => Maximaze player
@@ -27,8 +27,8 @@ namespace FourInRowAI.AI
         // Compute the column where the AI player should place its next chip
         public Move GetNextMove(Grid grid)
         {
-            Human = new Player("Human Player", "Red", 0);
-            AI = new Player("AI Player", "Blue", 0);
+            Human = new Player(Player.HumanPlayerCode, Player.HumanPlayerColor, 0);
+            AI = new Player(Player.AIPlayerCode, Player.AIPlayerColor, 0);
             return MaximizeMove(grid, Human, 0, Grid.MinScore, Grid.MaxScore);
         }
 

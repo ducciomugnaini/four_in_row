@@ -2,6 +2,12 @@
 {
     public class Player
     {
+        public static readonly string HumanPlayerCode = "Human Player";
+        public static readonly string AIPlayerCode = "AI Player";
+
+        public static readonly string HumanPlayerColor = "Red";
+        public static readonly string AIPlayerColor = "Blue";
+
         public string Name { get; set; }
         public string Color { get; set; }
         public int Score { get; set; }

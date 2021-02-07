@@ -65,7 +65,7 @@ namespace FourInRowStructures.Models
             EmptySlotCount = 0;
         }
 
-        public GridConnection(Chip chip) : base()
+        public GridConnection(Chip chip) : this()
         {
             Chips.Add(chip);
         }
@@ -145,7 +145,7 @@ namespace FourInRowStructures.Models
 
             for (int row = 0; row < currColumn.Count; row++)
             {
-                if(currColumn[row] == null)
+                if (currColumn[row] == null)
                 {
                     placedChip.Column = col;
                     placedChip.Row = row;
@@ -154,8 +154,9 @@ namespace FourInRowStructures.Models
 
                     currColumn[row] = placedChip;
                     LastPlacedChip = placedChip;
+                    return;
                 }
-            }            
+            }
 
             throw new Exception("Invalid row");
         }
@@ -177,7 +178,10 @@ namespace FourInRowStructures.Models
                 for (int r = 0; r < Columns[c].Count; r++)
                 {
                     var chip = Columns[c][r];
-                    if (chip.Player.Name.Equals(currentPlayer.Name))
+                    if (chip == null)
+                        break;
+
+                    if (!chip.Player.Name.Equals(currentPlayer.Name))
                     {
                         continue;
                     }
@@ -306,3 +310,4 @@ namespace FourInRowStructures.Models
         }
 
     }
+}
