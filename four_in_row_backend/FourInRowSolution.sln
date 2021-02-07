@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealtimeCompiler", "Realtim
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealTimeComplilerNUTest", "RealTimeComplilerNUTest\RealTimeComplilerNUTest.csproj", "{2B65BBDE-37DE-45EC-AABA-EF7EF02A1099}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FourInRowAI", "FourInRowAI\FourInRowAI.csproj", "{51E34B8E-6AB3-4F46-80B6-4E118099CE7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FourInRowAI", "FourInRowAI\FourInRowAI.csproj", "{51E34B8E-6AB3-4F46-80B6-4E118099CE7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FourInRowAINUTest", "FourInRowAINUTest\FourInRowAINUTest.csproj", "{F3C945DF-0530-4085-BE81-9BDAA8567024}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FourInRowAINUTest", "FourInRowAINUTest\FourInRowAINUTest.csproj", "{F3C945DF-0530-4085-BE81-9BDAA8567024}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FourInRowStructures", "FourInRowStructures\FourInRowStructures.csproj", "{3D869700-323D-47BF-BE7C-EEDA47FD8F67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{F3C945DF-0530-4085-BE81-9BDAA8567024}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3C945DF-0530-4085-BE81-9BDAA8567024}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3C945DF-0530-4085-BE81-9BDAA8567024}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D869700-323D-47BF-BE7C-EEDA47FD8F67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D869700-323D-47BF-BE7C-EEDA47FD8F67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D869700-323D-47BF-BE7C-EEDA47FD8F67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D869700-323D-47BF-BE7C-EEDA47FD8F67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

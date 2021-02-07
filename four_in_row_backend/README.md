@@ -37,6 +37,8 @@ Baraccone tirato su per non passare esplicitamente il logger alla libreria ester
 
 [Code Maid](https://marketplace.visualstudio.com/items?itemName=SteveCadwallader.CodeMaid)
 
+[Todo Highlighter](https://marketplace.visualstudio.com/items?itemName=ygoe.SelectionTodoHighlighter)
+
 # Hints
 
 Al momento sembra che signalR sia funzionante con project mentre con iss behind sorgono problemi di connessione da parte dell app android. 
