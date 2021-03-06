@@ -29,9 +29,13 @@ Baraccone tirato su per non passare esplicitamente il logger alla libreria ester
 
 [JWT Auth](https://jasonwatmore.com/post/2019/10/11/aspnet-core-3-jwt-authentication-tutorial-with-example-api#app-settings-cs)
 
-[SingnalR overview](https://docs.microsoft.com/en-us/aspnet/core/tutorials/signalr?view=aspnetcore-5.0&tabs=visual-studio)
-[SingnalR samples](https://github.com/aspnet/SignalR-samples)
-[SingnalR java client](https://github.com/aspnet/SignalR-samples)
+[SignalR overview](https://docs.microsoft.com/en-us/aspnet/core/tutorials/signalr?view=aspnetcore-5.0&tabs=visual-studio)  
+[SignalR samples](https://github.com/aspnet/SignalR-samples)  
+[SignalR java client](https://github.com/aspnet/SignalR-samples)  
+[SignalR group subscription](https://docs.microsoft.com/en-us/aspnet/core/signalr/groups?view=aspnetcore-5.0)  
+[SignalR after hub start](https://forums.asp.net/t/2155319.aspx?SignalR+Java+client+How+to+invoke+a+method+immediately+after+hub+start+)  
+Sottoscrizione alla room di gioco
+
 
 # Utilities
 
