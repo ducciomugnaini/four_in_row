@@ -74,6 +74,19 @@
             app:strokeWidth="0.8dp" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_go_move"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Go to Move Activity"
+            android:textColor="@color/cardview_light_background"
+            app:cornerRadius="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:strokeColor="@color/cardview_light_background"
+            app:strokeWidth="0.8dp" />
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_callRest"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

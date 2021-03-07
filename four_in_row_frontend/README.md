@@ -22,11 +22,19 @@ Utilitiy per manipolare le stringhe in Android.
 
 [AndroidX](https://developer.android.com/jetpack/guide)
 
+[Preatty Logger](https://github.com/orhanobut/logger)
+
 ## Utilities
 
 [Material Theme](https://plugins.jetbrains.com/plugin/8006-material-theme-ui)
 
 [Material Theme Tutorial](https://material.io/resources/tutorials#android-java)
 
+[Effect repository](https://github.com/pratikishere/Androideverywhere-Resources/wiki/Android-Curved-Motion-or-Path-Animation)  
+[Effect Demo](https://blog.stylingandroid.com/curved-motion-part-1/)  
+[Curved Motion](https://blog.stylingandroid.com/curved-motion-part-2/)  
+[Paths Documentation API](https://developer.android.com/reference/android/graphics/Path)
 
 ## Hints
+
+[Clean Log](https://stackoverflow.com/questions/58557561/logcat-full-of-input-svinfo-flags-is-8-while-app-is-running)

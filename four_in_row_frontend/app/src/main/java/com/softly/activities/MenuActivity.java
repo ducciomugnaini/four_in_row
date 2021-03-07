@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.orhanobut.logger.AndroidLogAdapter;
+import com.orhanobut.logger.Logger;
 import com.softly.R;
 import com.softly.structures.Grid;
 import com.softly.utilities.network.NetworkUtility;
@@ -25,6 +28,16 @@ public class MenuActivity extends AppCompatActivity {
         btnGoToBoard.setOnClickListener(v -> {
             Intent intent = new Intent(MenuActivity.this, BoardActivity.class);
             startActivity(intent);
+
+            Logger.d("btnGoToBoard");
+        });
+
+        Button btnGoToMove = findViewById(R.id.btn_go_move);
+        btnGoToMove.setOnClickListener(v -> {
+            Intent intent = new Intent(MenuActivity.this, MoveEffectActivity.class);
+            startActivity(intent);
+
+            Logger.d("btnGoToMove");
         });
 
         Button restButton = findViewById(R.id.btn_callRest);

@@ -16,6 +16,7 @@ import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.orhanobut.logger.Logger;
 import com.softly.R;
 
 import java.util.ArrayList;
@@ -33,6 +34,8 @@ public class BoardActivity extends AppCompatActivity {
 
         gridLayoutBoard = findViewById(R.id.layout_board);
         structureBoard = SetupBoard(6, 7);
+
+        Logger.d("Hello");
     }
 
     private ArrayList<ArrayList<ImageView>> SetupBoard(int rows, int columns) {

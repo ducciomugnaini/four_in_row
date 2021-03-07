@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activities.BoardActivity"></activity>
+        <activity android:name=".activities.MoveEffectActivity"></activity>
+        <activity android:name=".activities.BoardActivity" />
         <activity
             android:name=".activities.SplashActivity"
             android:theme="@style/SplashTheme">
