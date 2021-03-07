@@ -33,7 +33,6 @@
         app:iconGravity="textStart"
         android:gravity="center"-->
 
-
         <com.google.android.material.button.MaterialButton
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
@@ -48,13 +47,25 @@
         <!--app:icon="@drawable/player_icon"
         android:scaleType="fitXY"-->
 
-
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_go_to_chat"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Go to Chat Activity"
+            android:textColor="@color/cardview_light_background"
+            app:cornerRadius="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:strokeColor="@color/cardview_light_background"
+            app:strokeWidth="0.8dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_go_to_board"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Go to Board Activity"
             android:textColor="@color/cardview_light_background"
             app:cornerRadius="8dp"
             app:layout_constraintBottom_toBottomOf="parent"

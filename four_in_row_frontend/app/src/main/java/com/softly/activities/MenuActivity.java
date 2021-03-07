@@ -15,9 +15,15 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        Button clickButton = findViewById(R.id.btn_go_to_chat);
-        clickButton.setOnClickListener(v -> {
+        Button btnGoToChat = findViewById(R.id.btn_go_to_chat);
+        btnGoToChat.setOnClickListener(v -> {
             Intent intent = new Intent(MenuActivity.this, ChatActivity.class);
+            startActivity(intent);
+        });
+
+        Button btnGoToBoard = findViewById(R.id.btn_go_to_board);
+        btnGoToBoard.setOnClickListener(v -> {
+            Intent intent = new Intent(MenuActivity.this, BoardActivity.class);
             startActivity(intent);
         });
 
