@@ -24,6 +24,8 @@ Utilitiy per manipolare le stringhe in Android.
 
 [Preatty Logger](https://github.com/orhanobut/logger)
 
+[Bifunction](https://mkyong.com/java8/java-8-bifunction-examples/)
+
 ## Utilities
 
 [Material Theme](https://plugins.jetbrains.com/plugin/8006-material-theme-ui)
@@ -38,3 +40,6 @@ Utilitiy per manipolare le stringhe in Android.
 ## Hints
 
 [Clean Log](https://stackoverflow.com/questions/58557561/logcat-full-of-input-svinfo-flags-is-8-while-app-is-running)
+
+Android Studio Invalid Cache and restart  
+[In Case of Android Fatal signal 11 (SIGSEGV) at 0x636f7d89 (code=1)](https://stackoverflow.com/questions/17840521/android-fatal-signal-11-sigsegv-at-0x636f7d89-code-1-how-can-it-be-tracked)

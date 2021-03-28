@@ -92,6 +92,12 @@
             android:layout_height="wrap_content"
             android:text="Call REST API" />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_go_lobby"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Join Lobby" />
+
         <TextView
             android:id="@+id/txt_result"
             android:layout_width="match_parent"

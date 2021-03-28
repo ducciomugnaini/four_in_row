@@ -10,19 +10,17 @@ public class Configuration {
     @SerializedName("MoveRequestUrl")
     private String moveRequestUrl;
 
-    public String getAuthorizeUrl() {
-        return authorizeUrl;
-    }
+    @SerializedName("LobbyNameRequestUrl")
+    private String getLobbyNameRequestUrl;
 
-    public void setAuthorizeUrl(String authorizeUrl) {
-        this.authorizeUrl = authorizeUrl;
-    }
+    @SerializedName("SignalRUrl")
+    private String signalRUrl;
 
-    public String getMoveRequestUrl() {
-        return moveRequestUrl;
-    }
+    public String getAuthorizeUrl() { return authorizeUrl; }
 
-    public void setMoveRequestUrl(String moveRequestUrl) {
-        this.moveRequestUrl = moveRequestUrl;
-    }
+    public String getMoveRequestUrl() { return moveRequestUrl; }
+
+    public String getGetLobbyNameRequestUrl() { return getLobbyNameRequestUrl; }
+
+    public String getSignalRUrl(){ return signalRUrl; }
 }

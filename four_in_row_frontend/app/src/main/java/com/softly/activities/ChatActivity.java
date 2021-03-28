@@ -1,6 +1,5 @@
 package com.softly.activities;
 
-import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -11,12 +10,12 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.softly.R;
 import com.microsoft.signalr.HubConnection;
 import com.microsoft.signalr.HubConnectionBuilder;
+import com.softly.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ChatActivity extends AppCompatActivity {
 

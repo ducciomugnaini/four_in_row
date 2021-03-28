@@ -40,6 +40,14 @@ public class MenuActivity extends AppCompatActivity {
             Logger.d("btnGoToMove");
         });
 
+        Button btnGoToLobby = findViewById(R.id.btn_go_lobby);
+        btnGoToLobby.setOnClickListener(v -> {
+            Intent intent = new Intent(MenuActivity.this, LobbyActivity.class);
+            startActivity(intent);
+
+            Logger.d("btnGoToLobby");
+        });
+
         Button restButton = findViewById(R.id.btn_callRest);
         restButton.setOnClickListener(v -> {
 

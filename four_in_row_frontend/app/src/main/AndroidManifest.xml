@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        android:name=".signalr.SignalRSingleton"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -13,7 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activities.MoveEffectActivity"></activity>
+
+        <activity android:name=".activities.LobbyActivity" />
+        <activity android:name=".activities.MoveEffectActivity" />
         <activity android:name=".activities.BoardActivity" />
         <activity
             android:name=".activities.SplashActivity"
