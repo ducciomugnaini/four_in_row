@@ -41,6 +41,12 @@ Sottoscrizione alla room di gioco
 
 [Code Maid](https://marketplace.visualstudio.com/items?itemName=SteveCadwallader.CodeMaid)
 
+[Code Snippets VS](https://docs.microsoft.com/en-us/visualstudio/ide/walkthrough-creating-a-code-snippet?view=vs-2019)
+
+[Live Template Rider](https://www.jetbrains.com/help/rider/Templates__Applying_Templates__Creating_Source_Code_Using_Live_Templates.html#selecting)
+
+[Live Template Rider List](https://www.jetbrains.com/help/rider/Reference__Templates_Explorer__Live_Templates_CSHARP.html)
+
 # Hints
 
 Al momento sembra che signalR sia funzionante con project mentre con iss behind sorgono problemi di connessione da parte dell app android. 
