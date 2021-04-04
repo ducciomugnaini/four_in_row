@@ -29,7 +29,7 @@ public class LobbyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lobby);
 
         player = new Player();
-        player.Name = "Android Player "+ UUID.randomUUID().toString().substring(0,4);
+        player.Name = "Android Player " + UUID.randomUUID().toString().substring(0, 4);
         player.Score = 0;
 
         signalRManager = (SignalRSingleton) getApplication();
@@ -48,7 +48,7 @@ public class LobbyActivity extends AppCompatActivity {
                 /*runOnUiThread(() -> {
                     Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
                 });*/
-                Logger.d( "=======================> onReceiveSubscriptionConfirm");
+                Logger.d("=======================> onReceiveSubscriptionConfirm");
             };
             Action2<String, String> onReceiveStartGame = (clientName, message) -> {
                 runOnUiThread(() -> {

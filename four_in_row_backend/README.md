@@ -36,6 +36,11 @@ Baraccone tirato su per non passare esplicitamente il logger alla libreria ester
 [SignalR after hub start](https://forums.asp.net/t/2155319.aspx?SignalR+Java+client+How+to+invoke+a+method+immediately+after+hub+start+)  
 Sottoscrizione alla lobby di gioco
 
+[Singleton](https://csharpindepth.com/articles/singleton)  
+[Lazy< T >](https://docs.microsoft.com/en-us/dotnet/api/system.lazy-1?view=net-5.0#constructors)  
+[Lazy< T >](https://www.dotnetperls.com/lazy)  
+Constructors. In an overloaded constructor, you can specify thread safety, and even specify a Func type that serves as a factory design pattern method.
+
 
 # Utilities
 
