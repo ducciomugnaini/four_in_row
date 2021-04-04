@@ -34,24 +34,28 @@ Baraccone tirato su per non passare esplicitamente il logger alla libreria ester
 [SignalR java client](https://github.com/aspnet/SignalR-samples)  
 [SignalR group subscription](https://docs.microsoft.com/en-us/aspnet/core/signalr/groups?view=aspnetcore-5.0)  
 [SignalR after hub start](https://forums.asp.net/t/2155319.aspx?SignalR+Java+client+How+to+invoke+a+method+immediately+after+hub+start+)  
-Sottoscrizione alla room di gioco
+Sottoscrizione alla lobby di gioco
 
 
 # Utilities
 
 [Code Maid](https://marketplace.visualstudio.com/items?itemName=SteveCadwallader.CodeMaid)
 
-[Code Snippets VS](https://docs.microsoft.com/en-us/visualstudio/ide/walkthrough-creating-a-code-snippet?view=vs-2019)
-
-[Live Template Rider](https://www.jetbrains.com/help/rider/Templates__Applying_Templates__Creating_Source_Code_Using_Live_Templates.html#selecting)
-
+[Code Snippets VS](https://docs.microsoft.com/en-us/visualstudio/ide/walkthrough-creating-a-code-snippet?view=vs-2019)  
+[Live Template Rider](https://www.jetbrains.com/help/rider/Templates__Applying_Templates__Creating_Source_Code_Using_Live_Templates.html#selecting)  
 [Live Template Rider List](https://www.jetbrains.com/help/rider/Reference__Templates_Explorer__Live_Templates_CSHARP.html)
+
+[Vertical Rules](https://nickjanetakis.com/blog/80-characters-per-line-is-a-standard-worth-sticking-to-even-today)  
+[Vertical Rules VS](https://marketplace.visualstudio.com/items?itemName=PaulHarrington.EditorGuidelines)
+[Vertical Rules VS - .editorconfig](https://docs.microsoft.com/en-us/visualstudio/ide/create-portable-custom-editor-options?view=vs-2019)  
+[Disabling highlight current row VS](https://stackoverflow.com/questions/7883966/disabling-highlighting-of-current-line-in-the-visual-studio-editor)  
+[Vertical Rules Intellij](https://stackoverflow.com/questions/7883966/disabling-highlighting-of-current-line-in-the-visual-studio-editor)
 
 # Hints
 
 Al momento sembra che signalR sia funzionante con project mentre con iss behind sorgono problemi di connessione da parte dell app android. 
-Problema da idagare prima di andare in produzione.
+Problema da idagare prima di andare in produzione.  
 [Debug settings #iis #project](https://stackoverflow.com/questions/51801184/asp-net-core-launch-settings-iis-express-iis-project-executable)
 
-Settaggio delle cartelle della web app
+Settaggio delle cartelle della web app  
 [app.UseStaticFiles() vs app.UseFileServer()](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/static-files?view=aspnetcore-5.0)
