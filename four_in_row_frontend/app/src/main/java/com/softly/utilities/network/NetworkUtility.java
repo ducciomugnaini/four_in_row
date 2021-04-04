@@ -47,6 +47,7 @@ public class NetworkUtility {
         }
 
         try {
+            // todo to replace with app credential
             JSONObject authorizeContent = new JSONObject();
             authorizeContent.put("Username", username);
             authorizeContent.put("Password", password);

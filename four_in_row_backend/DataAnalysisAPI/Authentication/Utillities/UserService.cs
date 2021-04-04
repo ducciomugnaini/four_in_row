@@ -17,7 +17,7 @@ namespace FourInRow.Authentication.Utillities
                 
         private List<User> _users = new List<User>
         {
-            // todo to replace
+            // todo to replace with app credential
             // users hardcoded for simplicity, store in a db with hashed passwords in production applications            
             new User { Id = 1, FirstName = "Test", LastName = "User", Username = "test", Password = "test" }
         };        
