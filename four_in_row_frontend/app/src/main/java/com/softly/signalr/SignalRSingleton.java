@@ -9,6 +9,7 @@ import com.microsoft.signalr.HubConnection;
 import com.microsoft.signalr.HubConnectionBuilder;
 import com.orhanobut.logger.Logger;
 import com.softly.structures.Lobby;
+import com.softly.structures.Player;
 import com.softly.utilities.json.Configuration;
 import com.softly.utilities.json.JsonUtility;
 
@@ -17,17 +18,18 @@ import io.reactivex.functions.Function3;
 public class SignalRSingleton extends Application {
 
     private HubConnection hubConnection;
+    private Lobby hubConnectionLobby;
+
     public static Configuration configuration = null;
 
-    public static String ClientName = "Android Client SignalR Android";
+    public HubConnection GetHubConnection(){ return hubConnection; }
 
-    public void ResetHubConnection(){
-        hubConnection = null;
-    }
-
-    public HubConnection getHubConnection(Lobby lobby,
+    public HubConnection GetHubConnection(Player clientPlayer, Lobby lobby,
                                           Action2<String, String> onReceiveSubscriptionConfirm,
                                           Action2<String, String> onReceiveStartGame) {
+
+        // todo forse un resetHubConnection ?
+        hubConnectionLobby = lobby;
         if (hubConnection == null) {
 
             if (configuration == null) {
@@ -42,14 +44,23 @@ public class SignalRSingleton extends Application {
             hubConnection.on("ReceiveSubscriptionConfirm", onReceiveSubscriptionConfirm, String.class, String.class);
             hubConnection.on("ReceiveStartGame", onReceiveStartGame, String.class, String.class);
 
-
             new HubConnectionTask().execute(() -> {
                 hubConnection.start().blockingAwait();
-                hubConnection.invoke(Void.class, "SendSubscriptionToGroup", ClientName, lobby.Name);
+                hubConnection.invoke(Void.class, "SendSubscriptionToGroup", clientPlayer.Name, hubConnectionLobby.Name);
             });
         }
 
         return hubConnection;
+    }
+
+    public void RemoveFromLobby(Player player){
+        if(hubConnection != null)
+            hubConnection.invoke(Void.class, "SendRemoveFromLobby", player.Name, hubConnectionLobby.Name);
+    }
+
+    public void ResetHubConnection(){
+        hubConnection = null;
+        hubConnectionLobby = null;
     }
 
     static class HubConnectionTask extends AsyncTask<Runnable, Void, Void> {
@@ -66,6 +77,4 @@ public class SignalRSingleton extends Application {
             return null;
         }
     }
-
-
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.SignalR;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;
 
@@ -6,6 +7,16 @@ namespace FourInRow.Hubs
 {
     public class ChatHub : Hub
     {
+        private readonly ILogger<ChatHub> _logger;
+
+        public ChatHub(ILogger<ChatHub> logger)
+        {
+            _logger = logger;
+            _logger.LogInformation(1, "NLog injected into ChatHub");            
+        }
+
+        // ----------------------------------------------------------------------------------------------------------------------------------------------
+
         public void Send(string name, string message)
         {
             // Call the broadcastMessage method to update clients.
@@ -46,23 +57,40 @@ namespace FourInRow.Hubs
 
         // ----------------------------------------------------------------------------------------------------------------------------------------------
 
-        public async Task SendSubscriptionToGroup(string clientName, string lobbyname)
+        public async Task SendSubscriptionToGroup(string clientName, string lobbyName)
         {
             try
             {
-                await Groups.AddToGroupAsync(Context.ConnectionId, lobbyname);
-                await Clients.Group(lobbyname).SendAsync("ReceiveSubscriptionConfirm", clientName, $"{Context.ConnectionId} has joined the group {lobbyname}.");
+                _logger.LogInformation($"SendSubscriptionToGroup received from {clientName} => {lobbyName}");
+                await Groups.AddToGroupAsync(Context.ConnectionId, lobbyName);
+
+                var subscriptionConfirmMsg = $"{Context.ConnectionId} has joined the group {lobbyName}.";
+                _logger.LogInformation($"ReceiveSubscriptionConfirm sended from {clientName} => {subscriptionConfirmMsg}");
+                await Clients.Group(lobbyName).SendAsync("ReceiveSubscriptionConfirm", clientName, subscriptionConfirmMsg);
+
+                // todo search in queue a potential gamer
+                // se lo trovo inizio la partita
+                // altrimenti creo una nuova lobby
 
                 var canGameStart = true;
                 if (canGameStart)
                 {
-                    await Clients.Group(lobbyname).SendAsync("ReceiveStartGame", clientName, $"{Context.ConnectionId} belongs {lobbyname} can start the game.");
+                    await Clients.Group(lobbyName).SendAsync("ReceiveStartGame", clientName, $"{Context.ConnectionId} belongs {lobbyName} can start the game.");
                 }                
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
             }
+        }
+
+        public async Task SendRemoveFromLobby(string clientName, string lobbyName)
+        {
+            _logger.LogInformation($"SendRemoveFromLobby received from {clientName} => {lobbyName}");
+            await Groups.RemoveFromGroupAsync(Context.ConnectionId, lobbyName);
+
+            _logger.LogInformation($"ReceiveLobbyAdandoned sended from {clientName} => {lobbyName}");
+            await Clients.Group(lobbyName).SendAsync("ReceiveLobbyAdandoned", clientName, $"{Context.ConnectionId} has left the group {lobbyName}.");
         }
 
     }

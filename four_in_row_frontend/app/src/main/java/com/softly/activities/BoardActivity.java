@@ -1,28 +1,30 @@
 package com.softly.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
-import android.graphics.Rect;
 import android.os.Bundle;
-import android.renderscript.ScriptIntrinsicYuvToRGB;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.orhanobut.logger.Logger;
 import com.softly.R;
+import com.softly.signalr.SignalRSingleton;
+import com.softly.structures.Player;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.UUID;
 
 public class BoardActivity extends AppCompatActivity {
+
+    private SignalRSingleton signalRSingleton;
 
     private ArrayList<ArrayList<ImageView>> structureBoard;
     private GridLayout gridLayoutBoard;
@@ -32,10 +34,27 @@ public class BoardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_board);
 
+        signalRSingleton = (SignalRSingleton) getApplication();
+
         gridLayoutBoard = findViewById(R.id.layout_board);
         structureBoard = SetupBoard(6, 7);
 
         Logger.d("Hello");
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        // todo utilizzare il player corrente
+        Player player = new Player();
+        player.Name = "Android Player FAKE-LEAVING";
+        player.Score = 0;
+
+        // todo return to menu activity
+        Logger.d("Board Activity Back Pressed");
+        signalRSingleton.RemoveFromLobby(player);
+        signalRSingleton.ResetHubConnection();
+        super.onBackPressed();
     }
 
     private ArrayList<ArrayList<ImageView>> SetupBoard(int rows, int columns) {

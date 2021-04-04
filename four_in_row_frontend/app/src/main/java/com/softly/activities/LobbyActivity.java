@@ -2,7 +2,6 @@ package com.softly.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,30 +13,34 @@ import com.softly.signalr.SignalRSingleton;
 import com.softly.structures.Player;
 import com.softly.utilities.network.NetworkUtility;
 
+import java.util.UUID;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class LobbyActivity extends AppCompatActivity {
 
-    public static String lobbyActivityTag = "ACTIVITY_LOBBY";
+    private SignalRSingleton signalRManager;
+    private static String lobbyActivityTag = "ACTIVITY_LOBBY";
+
+    private Player player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lobby);
 
-        Player player = new Player();
-        player.Name = "Android";
+        player = new Player();
+        player.Name = "Android Player "+ UUID.randomUUID().toString().substring(0,4);
         player.Score = 0;
 
-        SignalRSingleton app = (SignalRSingleton) getApplication();
-        app.ResetHubConnection();
+        signalRManager = (SignalRSingleton) getApplication();
+        signalRManager.ResetHubConnection();
         AtomicReference<HubConnection> hubConnection = new AtomicReference<>();
 
         NetworkUtility.GetLobbyName(this, player, lobby -> {
 
             Logger.d(lobbyActivityTag, "Lobby name received: " + lobby.Name);
 
-            // mostrare la conferma di sottoscrizione
+            // todo mostrare la conferma di sottoscrizione
 
             Action2<String, String> onReceiveSubscriptionConfirm = (clientName, message) -> {
                 // la connessione successiva immediata allo startgame potrebbe causare problemi
@@ -56,20 +59,23 @@ public class LobbyActivity extends AppCompatActivity {
                 });
             };
 
-            hubConnection.set(app.getHubConnection(lobby, onReceiveSubscriptionConfirm, onReceiveStartGame));
+            hubConnection.set(signalRManager.GetHubConnection(player, lobby, onReceiveSubscriptionConfirm, onReceiveStartGame));
 
             return null;
         });
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        Logger.d("Lobby Activity Resumed");
+    }
+
+    @Override
     public void onBackPressed() {
-
-        // todo remove from group
-        // hubConnection.invoke(Void.class, "RemoveFromGroup", ClientName, GroupName);
-
-        SignalRSingleton app = (SignalRSingleton) getApplication();
-        app.ResetHubConnection();
+        Logger.d("Lobby Activity Back Pressed");
+        signalRManager.RemoveFromLobby(player);
+        signalRManager.ResetHubConnection();
         super.onBackPressed();
     }
 }

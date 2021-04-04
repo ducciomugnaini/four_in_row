@@ -134,7 +134,7 @@ public class NetworkUtility {
     }
 
     public static void GetLobbyName(Context context, Player player,
-                                    Function<Lobby, Void> joinLobbyFunction) {
+                                    Function<Lobby, Void> onLobbyReceived) {
 
         Log.d(networkTag, "GetLobbyName started.");
 
@@ -155,7 +155,7 @@ public class NetworkUtility {
                         Lobby lobby = Lobby.FromJSON(response);
                         Log.d(networkTag, "received lobby object: " + response);
 
-                        joinLobbyFunction.apply(lobby);
+                        onLobbyReceived.apply(lobby);
                     },
                     (VolleyError error) -> {
                         Log.e(networkTag, "onErrorResponse fired: " + error);
@@ -163,7 +163,7 @@ public class NetworkUtility {
 
                             BiFunction<Context, ? super Player, Void> selfMethod =
                                     (ctx, plr) -> {
-                                        GetLobbyName(ctx, plr, joinLobbyFunction);
+                                        GetLobbyName(ctx, plr, onLobbyReceived);
                                         return null;
                                     };
 
