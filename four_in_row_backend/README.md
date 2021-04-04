@@ -34,7 +34,8 @@ Baraccone tirato su per non passare esplicitamente il logger alla libreria ester
 [SignalR java client](https://github.com/aspnet/SignalR-samples)  
 [SignalR group subscription](https://docs.microsoft.com/en-us/aspnet/core/signalr/groups?view=aspnetcore-5.0)  
 [SignalR after hub start](https://forums.asp.net/t/2155319.aspx?SignalR+Java+client+How+to+invoke+a+method+immediately+after+hub+start+)  
-[SignalR group auth JWT](https://docs.microsoft.com/en-us/aspnet/core/signalr/authn-and-authz?view=aspnetcore-3.1&source=docs)  
+[SignalR group auth JWT - net core - Built-in JWT authentication](https://docs.microsoft.com/en-us/aspnet/core/signalr/authn-and-authz?view=aspnetcore-3.1&source=docs)  
+[SignalR group auth JWT - Android  - Configure bearer token authentication](https://docs.microsoft.com/en-us/aspnet/core/signalr/java-client?view=aspnetcore-3.1)  
 Sottoscrizione alla lobby di gioco
 
 [Singleton](https://csharpindepth.com/articles/singleton)  
