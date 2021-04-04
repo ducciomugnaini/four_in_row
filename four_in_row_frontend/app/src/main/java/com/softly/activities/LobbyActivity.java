@@ -29,8 +29,9 @@ public class LobbyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lobby);
 
         player = new Player();
-        player.Name = "Android Player " + UUID.randomUUID().toString().substring(0, 4);
-        player.Score = 0;
+        player.Nickname = "Android Player " + UUID.randomUUID().toString().substring(0, 4);
+        player.Wins = 5;
+        player.Loses = 1;
 
         signalRManager = (SignalRSingleton) getApplication();
         signalRManager.ResetHubConnection();

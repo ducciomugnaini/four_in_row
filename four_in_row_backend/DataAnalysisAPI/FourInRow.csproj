@@ -15,5 +15,9 @@
     <ProjectReference Include="..\RealtimeCompiler\RealtimeCompiler.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Lobbies\" />
+  </ItemGroup>
+
 
 </Project>

@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Microsoft.Extensions.Logging;
 using RealtimeCompiler.Interfaces;
+using System.IO;
+using FourInRow.Facilities;
+using FourInRow.Entities;
 
 namespace FourInRow.Controllers
 {
@@ -46,6 +49,21 @@ namespace FourInRow.Controllers
             _logger.LogDebug(1, "NLog injected into HomeController");
 
             _runnable = runnable;
+        }
+
+        [HttpGet] 
+        [Route("TestLobbyManager")]
+        public void TestLobbyManager()
+        {
+            Random rnd = new Random();
+            LobbyManager.Instance.SearchOrCreate(new Player
+            {
+                Nickname = "TestController_" + Guid.NewGuid().ToString().Substring(0, 5),
+                Wins = rnd.Next(0, 10),
+                Loses = rnd.Next(0, 10),
+                JoinOn = DateTime.Now,
+                ContextConnection = Guid.NewGuid().ToString()
+            });
         }
 
         [HttpGet]

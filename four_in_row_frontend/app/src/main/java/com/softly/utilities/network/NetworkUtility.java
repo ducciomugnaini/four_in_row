@@ -148,7 +148,7 @@ public class NetworkUtility {
         try {
 
             JSONObject playerObject = player.ToJSON();
-            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
+            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
                     configuration.getGetLobbyNameRequestUrl(),
                     playerObject,
                     (JSONObject response) -> {

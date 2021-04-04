@@ -1,6 +1,6 @@
 {
   "AuthorizeUrl" : "http://10.0.2.2:57507/users/authenticate",
   "MoveRequestUrl" : "http://10.0.2.2:57507/api/move",
-  "LobbyNameRequestUrl" : "http://10.0.2.2:57507/api/lobby",
+  "LobbyNameRequestUrl" : "http://10.0.2.2:57507/api/lobby/SearchLobby",
   "SignalRUrl" : "http://10.0.2.2:57507/chat"
 }

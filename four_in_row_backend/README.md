@@ -41,6 +41,8 @@ Sottoscrizione alla lobby di gioco
 [Lazy< T >](https://www.dotnetperls.com/lazy)  
 Constructors. In an overloaded constructor, you can specify thread safety, and even specify a Func type that serves as a factory design pattern method.
 
+[Format json](https://weblog.west-wind.com/posts/2015/mar/31/prettifying-a-json-string-in-net)  
+As is usually the case, JSON.NET makes JSON manipulations super easy – in fact it’s a single line of code.
 
 # Utilities
 

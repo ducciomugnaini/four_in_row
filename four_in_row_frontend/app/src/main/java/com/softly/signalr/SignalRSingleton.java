@@ -13,8 +13,6 @@ import com.softly.structures.Player;
 import com.softly.utilities.json.Configuration;
 import com.softly.utilities.json.JsonUtility;
 
-import io.reactivex.functions.Function3;
-
 public class SignalRSingleton extends Application {
 
     private HubConnection hubConnection;
@@ -46,7 +44,7 @@ public class SignalRSingleton extends Application {
 
             new HubConnectionTask().execute(() -> {
                 hubConnection.start().blockingAwait();
-                hubConnection.invoke(Void.class, "SendSubscriptionToGroup", clientPlayer.Name, hubConnectionLobby.Name);
+                hubConnection.invoke(Void.class, "SendSubscriptionToGroup", clientPlayer.Nickname, hubConnectionLobby.Name);
             });
         }
 
@@ -55,7 +53,7 @@ public class SignalRSingleton extends Application {
 
     public void RemoveFromLobby(Player player){
         if(hubConnection != null)
-            hubConnection.invoke(Void.class, "SendRemoveFromLobby", player.Name, hubConnectionLobby.Name);
+            hubConnection.invoke(Void.class, "SendRemoveFromLobby", player.Nickname, hubConnectionLobby.Name);
     }
 
     public void ResetHubConnection(){

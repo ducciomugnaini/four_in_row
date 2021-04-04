@@ -20,7 +20,6 @@ import com.softly.signalr.SignalRSingleton;
 import com.softly.structures.Player;
 
 import java.util.ArrayList;
-import java.util.UUID;
 
 public class BoardActivity extends AppCompatActivity {
 
@@ -47,8 +46,8 @@ public class BoardActivity extends AppCompatActivity {
 
         // todo utilizzare il player corrente
         Player player = new Player();
-        player.Name = "Android Player FAKE-LEAVING";
-        player.Score = 0;
+        player.Nickname = "Android Player FAKE-LEAVING";
+        player.Wins = 0;
 
         // todo return to menu activity
         Logger.d("Board Activity Back Pressed");
